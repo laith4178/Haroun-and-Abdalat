@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدارس أرض النشامى</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* ألوان متغيرة */
+:root {
+  --primary-blue: #0077b6;
+  --dark-blue: #023e8a;
+  --light-blue: #00b4d8;
+  --accent-orange: #ff7b00;
+  --text-dark: #2c3e50;
+  --text-light: #ecf0f1;
+  --background-light: #f8f9fa;
+  --background-gray: #e9ecef;
+  --white: #ffffff;
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background-color: var(--background-light);
+  margin: 0;
+  padding: 0;
+  color: var(--text-dark);
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* النص المتحرك */
+.gaza-text {
+  font-size: 2rem;
+  font-family: "Tajawal", sans-serif;
+  animation: palestineBlink 4s linear infinite;
+  cursor: default;
+  user-select: none;
+  margin: 30px 0;
+  text-align: center;
+}
+@keyframes palestineBlink {
+  0%   { color: #000000; }
+  25%  { color: #FFFFFF; }
+  50%  { color: #007A3D; }
+  75%  { color: #CE1126; }
+  100% { color: #000000; }
+}
+
+/* الروابط */
+a {
+  text-decoration: none;
+  color: var(--primary-blue);
+  transition: color 0.3s ease;
+}
+a:hover { color: var(--accent-orange); }
+
+/* الهيدر */
+.page-header {
+  background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+  color: var(--text-light);
+  padding: 4rem 1rem;
+  text-align: center;
+  position: relative;
+}
+.page-header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('https://images.unsplash.com/photo-1574680096145-d05b4747414c?q=80&w=2069&auto=format&fit=crop') center center / cover no-repeat;
+  opacity: 0.18;
+}
+.page-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 800;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* الحاوية */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* الأقسام */
+.content-section {
+  padding: 2rem 1rem;
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px var(--shadow-medium);
+  margin-top: 2rem;
+}
+h2 {
+  color: var(--dark-blue);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+p { font-size: 1rem; margin-bottom: 1rem; }
+
+/* معرض الصور */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* إطار الفيسبوك */
+.fb-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+.fb-container {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 16px;
+  max-width: 550px;
+  width: 100%;
+  animation: fadeInUp 1s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.fb-container:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(24, 119, 242, 0.25);
+}
+.fb-container h3 {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #1877f2;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  position: relative;
+}
+.fb-container h3::after {
+  content: "";
+  display: block;
+  margin: 8px auto 0;
+  width: 60px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #1877f2, #42b72a);
+  animation: glow 2s infinite alternate;
+}
+.fb-container iframe {
+  width: 100%;
+  border-radius: 12px;
+  border: none;
+  overflow: hidden;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 5px #1877f2; }
+  to { box-shadow: 0 0 15px #42b72a; }
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(50px) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* زر العودة */
+.next-button-wrapper {
+  text-align: center;
+  margin: 2rem 0;
+}
+.next-button-wrapper a {
+  background-color: var(--primary-blue);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+}
+.next-button-wrapper a:hover {
+  background-color: var(--accent-orange);
+}
+
+/* تجاوب النصوص */
+@media (max-width: 768px) {
+  .page-header h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
+  .fb-container h3 { font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<h1 class="gaza-text">غزة_تموت_جوعًا</h1>
+
+<header class="page-header">
+  <h1>مدارس أرض النشامى</h1>
+</header>
+
+<main class="container">
+  <section class="content-section">
+    <h2>صور المدرسة</h2>
+    <div class="gallery">
+      <img src="1l.jpg" alt="صورة 1">
+      <img src="2l.jpg" alt="صورة 2">
+      <img src="3l.jpg" alt="صورة 3">
+      <img src="4l.jpg" alt="صورة 4">
+      <img src="5l.jpg" alt="صورة 5">
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>الرؤية والرسالة</h2>
+    <p>أن تكون مدارس أرض النشامى نموذجًا للتفوق الأكاديمي والإنساني...</p>
+    <p>الرسالة: تقديم تعليم نوعي وحديث يجمع بين المعارف الأكاديمية والمهارات الحياتية ضمن بيئة آمنة وداعمة.</p>
+    <h2>المناهج الدراسية</h2>
+    <p>تعتمد المدرسة المنهاج الأردني المطوّر لجميع المراحل...</p>
+    <h2>الأنشطة والخدمات المساندة</h2>
+    <p>نوادٍ علمية وأدبية وفنية ورياضية...</p>
+    <h2>لماذا مدارس أرض النشامى؟</h2>
+    <p>✅ كادر تدريسي متميز وخبرات طويلة.</p>
+    <p>✅ بيئة تعليمية حديثة وتكنولوجيا مدمجة في الصفوف.</p>
+    <p>✅ التزام بالقيم الوطنية والتربوية.</p>
+    <p>✅ متابعة أكاديمية فردية لكل طالب لضمان التقدم المستمر.</p>
+  </section>
+
+  <div class="fb-wrapper">
+    <div class="fb-container">
+      <h3>الكادر التعليمي المتميز</h3>
+      <iframe 
+        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0QKWjvkpRQvc5wPqR4VCU7q1a9rDDADmQb8k7FZpXQR4y1gWsi2VngB1Z5HT2bzASl%26id%3D61564649963598&show_text=true&width=500" 
+        height="600"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="next-button-wrapper">
+    <a href="index.html"><i class="fas fa-arrow-right"></i> السابق</a>
+  </div>
+</main>
+
+</body>
+</html>
