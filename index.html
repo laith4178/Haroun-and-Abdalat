@@ -14,7 +14,6 @@ body {
   text-align: center;
 }
 
-/* شريط الأخبار */
 .news-bar {
   background-color: #005bbb;
   color: #fff;
@@ -35,7 +34,6 @@ body {
   100% { transform: translateX(-100%); }
 }
 
-/* النص المتحرك */
 .gaza-text {
   font-size: 2rem;
   font-family: "Tajawal",sans-serif;
@@ -52,7 +50,6 @@ body {
   100% { color: #000000; }
 }
 
-/* البانر الرئيسي */
 .hero {
   background: linear-gradient(135deg, #023e8a, #0077b6);
   color: #ecf0f1;
@@ -82,7 +79,6 @@ body {
   color: #fff;
 }
 
-/* حاوية الصور */
 .images-container {
   display: flex;
   justify-content: center;
@@ -114,7 +110,6 @@ body {
   background: #f5f5f5;
 }
 
-/* تكبير الصورة الثانية فقط */
 .images-container img.big-img {
   width: 260px;
   height: 240px;
@@ -122,7 +117,6 @@ body {
   background: #f5f5f5;
 }
 
-/* تأثير عند تحريك الماوس على الصور */
 .images-container img:hover {
   transform: scale(1.13) rotate(-2deg);
   box-shadow: 0 18px 48px rgba(255, 123, 0, 0.32), 0 2.5px 12px rgba(0,123,255,0.20);
@@ -132,7 +126,6 @@ body {
   cursor: pointer;
 }
 
-/* الأزرار */
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
@@ -153,7 +146,6 @@ body {
   background: #e06a00;
 }
 
-/* تصميم متجاوب */
 @media (max-width:768px){
   .hero-content h1 {
     font-size: 2rem;
@@ -210,7 +202,6 @@ body {
 <header class="hero">
   <div class="hero-content">
     <h1>أكادمية الحارون والعبداللات</h1>
-    <!-- الصور داخل حاوية مرنة -->
     <div class="images-container">
       <img src="ll.png" alt="الصورة الأولى">
       <img src="lk.png" alt="الصورة الثانية" class="big-img">
